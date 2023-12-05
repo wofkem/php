@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    if(isset($_SESSION['id'])){
+        $login=TRUE;
+    }
+    else{
+        $login=FALSE;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +22,17 @@
             <div style="margin-top: 30px; margin-right: 50px;">
                 <a href="index.html" style="margin-left: 30px;">Home</a>
                 <a href="" style="margin-left: 30px;">사이트맵</a>
-                <a href="" style="margin-left: 30px;">로그아웃</a>
+                <?php
+                    if($login){
+                ?>
+                <a href="" style="margin-left: 30px;">로그인</a>
+                <?php
+                    }else{
+                ?>
+                    <a href="" style="margin-left: 30px;">로그아웃</a>
+                <?php
+                    }
+                ?>
             </div>
         </div>
         <div id="navbar" style="margin-top: 20px; border: 2px solid black; display: flex; justify-content: space-between; padding-left: 200px; padding-right: 200px; padding-top: 12px; padding-bottom: 12px;">
