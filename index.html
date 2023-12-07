@@ -1,3 +1,19 @@
+<?php
+require_once('db_config.php');
+
+$sql = "SELECT * FROM community_lst";
+$result = mysqli_query($conn, $sql);
+$list = '';
+while ($row = mysqli_fetch_array($result)){
+    $escaped_title = htmlspecialchars($row['title']);
+    $list = $list."<li><a href = \"index.php?id={$row['community_id']}\">{$escaped_title}</a></li>";
+}
+
+if (isset($_GET['community_id'])) {
+    $filetered_id = mysqli_real_escape_string($conn, $_GET['community_id']);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,109 +24,15 @@
 </head>
 <body>
     <div id="topbar">
-        <div><a href="index.php" class="top" id="top_left">스포츠 커뮤니티</a></div>
-        <div>
-            <a href="index.php" class="top">Home</a>
-            <a href="" class="top">사이트맵</a>
-            <a href="logout.php" class="top">로그아웃</a>
-            <a href="login.php" class="top">로그인/회원가입</a>
+        <div id="logo"><a href="index.php">Sport info</a></div>
+        <div id="top_right">
+            <div id="home"><a href="index.php">HOME</a></div>
+            <div id="login"><a href="login.php">로그인/회원가입</a></div>
+            <!--<div>로그아웃</div>-->
         </div>
     </div>
-    <div id="navbar">
-        <div class="dropdown">
-            <a href="" class="dropbtn">축구</a>
-            <div class="dropdown-content">
-                <a href="#">게시판</a>
-                <a href="#">팀 정보</a>
-                <a href="#">선수 정보</a>
-                <a href="#">경기 일정</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <a href="" class="dropbtn">해외축구</a>
-            <div class="dropdown-content">
-                <a href="Global_football_Board.php">게시판</a>
-                <a href="#">팀 정보</a>
-                <a href="#">선수 정보</a>
-                <a href="#">경기 일정</a>
-            </div>
-        </div><div class="dropdown" >
-            <a href="" class="dropbtn">야구</a>
-            <div class="dropdown-content">
-                <a href="#">게시판</a>
-                <a href="#">팀 정보</a>
-                <a href="#">선수 정보</a>
-                <a href="#">경기 일정</a>
-            </div>
-        </div><div class="dropdown">
-            <a href="" class="dropbtn">해외야구</a>
-            <div class="dropdown-content">
-                <a href="#">게시판</a>
-                <a href="#">팀 정보</a>
-                <a href="#">선수 정보</a>
-                <a href="#">경기 일정</a>
-            </div>
-        </div><div class="dropdown">
-            <a href="" class="dropbtn">농구</a>
-            <div class="dropdown-content">
-                <a href="#">게시판</a>
-                <a href="#">팀 정보</a>
-                <a href="#">선수 정보</a>
-                <a href="#">경기 일정</a>
-            </div>
-        </div><div class="dropdown">
-            <a href="" class="dropbtn">e스포츠</a>
-            <div class="dropdown-content">
-                <a href="#">게시판</a>
-                <a href="#">팀 정보</a>
-                <a href="#">선수 정보</a>
-                <a href="#">경기 일정</a>
-            </div>
-        </div>
-    </div>
-    <div id="contents">
-        <div>
-            <div>
-                <div>축구</div>
-                <div><a href="">More</a></div>
-            </div>
-            <div>게시글 리스트</div>
-        </div>
-        <div>
-            <div>
-                <div>해외축구</div>
-                <div><a href="">More</a></div>
-            </div>
-            <div>게시글 리스트</div>
-        </div>
-        <div>
-            <div>
-                <div>야구</div>
-                <div><a href="">More</a></div>
-            </div>
-            <div>게시글 리스트</div>
-        </div>
-        <div>
-            <div>
-                <div>해외야구</div>
-                <div><a href="">More</a></div>
-            </div>
-            <div>게시글 리스트</div>
-        </div>
-        <div>
-            <div>
-                <div>농구</div>
-                <div><a href="">More</a></div>
-            </div>
-            <div>게시글 리스트</div>
-        </div>
-        <div>
-            <div>
-                <div>e스포츠</div>
-                <div><a href="">More</a></div>
-            </div>
-            <div>게시글 리스트</div>
-        </div>
-    </div>
+    <ol>
+        <?=$list?>
+    </ol>
 </body>
 </html>
