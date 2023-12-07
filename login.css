@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+}
+#contents{
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px rgb(181, 181, 181);
+    margin-top: 170px;
+    width: 480px;
+    height: 500px;
+}
+#login{
+    background-color: #d8d8d800;
+    text-align: center;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    font-size: 25px;
+}
+#form{
+    text-align: center;
+}
+#id_div{
+    padding-right: 250px;
+    padding-bottom: 5px;
+}
+#id_input{
+    height: 40px;
+    width: 300px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: solid 1px;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+#pw_div{
+    padding-right: 225px;
+    padding-bottom: 5px;
+}
+#pw_input{
+    height: 40px;
+    width: 300px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    border: solid 1px;
+    font-size: 20px;
+    padding-left: 10px;
+}
+#login_btn{
+    width: 300px;
+    height: 50px;
+    border-radius: 5px;
+    border: solid 1px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+#regi_div{
+    margin-left: 230px;
+}
+#regi_btn{
+    text-decoration: none;
+    color: black;
+}

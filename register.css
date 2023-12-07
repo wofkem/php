@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+}
+#contents{
+    background-color: rgb(222, 222, 222);
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px rgb(181, 181, 181);
+    margin-top: 80px;
+    width: 900px;
+    height: 720px;
+}
+#top{
+    margin-bottom: 30px;
+    margin-top: 10px;
+    font-size: 25px;
+}
+#form{
+    margin-top: 20px;
+}
