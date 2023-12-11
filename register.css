@@ -1,9 +1,11 @@
 *{
     margin: 0;
 }
-body{
+#app{
     display: flex;
     justify-content: center;
+    background-color: #212529;
+    height: 900px;
 }
 #contents{
     background-color: rgb(222, 222, 222);
@@ -11,7 +13,7 @@ body{
     box-shadow: 1px 1px 1px 1px rgb(181, 181, 181);
     margin-top: 80px;
     width: 900px;
-    height: 720px;
+    height: 600px;
 }
 #top{
     margin-bottom: 30px;

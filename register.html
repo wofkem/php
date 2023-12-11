@@ -5,72 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
     <link rel="stylesheet" href="register.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </head>
 <body>
-<div id="contents">
-    <br><h2 id="top"><center>회원가입</center></h2><hr>
-        <form method="post" id="form">
-            <center>
-                <table border=0 bordercolor="blue" width=720 cellspacing=1 cellpadding=5>
-                    <tr id="id_row">
-                        <td width="450" align=right>아이디 : </td>
-                        <td width="330">
-                            <input type="text" size=10 maxlength=10 name="username" id="id_input">
-                        </td>
-                        <td width=200 align=right></td>
-                        <td width=300>
-                        </td>
-                    </tr>
-                    <tr id="pw_row">
-                        <td align=right>비밀번호 : </td>
-                        <td>
-                            <input type="password" size=10 maxlength=10 name="password" id="pw_input">
-                        </td>
-                        <td align=right>비밀번호 확인 : </td>
-                        <td>
-                            <input type="password" size=10 maxlength=10 name="confirmed_password" id="cnf_pw_input">
-                        </td>
-                    </tr>
-                    <tr id="sex_row">
-                        <td align=right>성별 : </td>
-                        <td>
-                            <input type="radio" name="sex" value="남자" checked>남
-                            <input type="radio" name="sex" value="여자">여
-                        </td>
-                        <td align=right></td>
-                        <td>
-                        </td>
-                    </tr>
-                    <tr id="nick_row">
-                        <td align=right>닉네임 : </td>
-                        <td colspan=3>
-                            <input type="text" size="10" maxlength=10 name="e_mail" id="nick_input">
-                        </td>
-                    </tr>
-                    <tr id="email_row">
-                        <td align=right>이메일 : </td>
-                        <td colspan=3>
-                            <input type="text" size=64 name="e_mail" id="email_input">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align=right></td>
-                        <td colspan=3>
-                            
-                        </td>
-                    </tr>
-                </table><br>
-                <table border=0 width=800>
-                    <tr>
-                        <td align=center>
-                            <input type="submit" value=" 회원 등록 ">     
-                            <input type="reset" value=" 다시 작성 ">
-                            <a href="index.php">HOME</a>
-                        </td>
-                    </tr>
-                </table>
-            </center>
-        </form>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">    
+        <div class="container-fluid">    
+            <a class="navbar-brand fs-3" href="index.html">스포츠 커뮤니티</a>    
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">        
+                <span class="navbar-toggler-icon"></span>    
+            </button>    
+            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">        
+                <ul class="navbar-nav mb-lg-0">   
+                    <li class="nav-item fs-4">            
+                        <a class="nav-link" href="login.html">로그인</a>        
+                    </li>     
+                    <li class="nav-item fs-4">            
+                        <a class="nav-link" href="index.html">Home</a>        
+                    </li>
+                </ul>    
+            </div>    
+        </div>
+    </nav>
+<div id="app">
+    <div id="contents">
+        <br><h2 id="top"><center>회원가입</center></h2><hr>
+            <form method="post" id="form">
+                <center>
+                    <table border=0 bordercolor="blue" width=720 cellspacing=1 cellpadding=5>
+                        <tr id="id_row">
+                            <td width="450" align=right>아이디 : </td>
+                            <td width="330">
+                                <input type="text" size=10 maxlength=10 name="username" id="id_input">
+                            </td>
+                            <td width=200 align=right></td>
+                            <td width=300>
+                            </td>
+                        </tr>
+                        <tr id="pw_row">
+                            <td align=right>비밀번호 : </td>
+                            <td>
+                                <input type="password" size=10 maxlength=10 name="password" id="pw_input">
+                            </td>
+                            <td align=right>비밀번호 확인 : </td>
+                            <td>
+                                <input type="password" size=10 maxlength=10 name="confirmed_password" id="cnf_pw_input">
+                            </td>
+                        </tr>
+                        <tr id="sex_row">
+                            <td align=right>성별 : </td>
+                            <td>
+                                <input type="radio" name="sex" value="남자" checked>남
+                                <input type="radio" name="sex" value="여자">여
+                            </td>
+                            <td align=right></td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr id="nick_row">
+                            <td align=right>닉네임 : </td>
+                            <td colspan=3>
+                                <input type="text" size="10" maxlength=10 name="e_mail" id="nick_input">
+                            </td>
+                        </tr>
+                        <tr id="email_row">
+                            <td align=right>이메일 : </td>
+                            <td colspan=3>
+                                <input type="text" size=64 name="e_mail" id="email_input">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align=right></td>
+                            <td colspan=3>
+                                
+                            </td>
+                        </tr>
+                    </table><br>
+                    <table border=0 width=800>
+                        <tr>
+                            <td align=center>
+                                <input type="submit" value=" 회원 등록 ">     
+                                <input type="reset" value=" 다시 작성 ">
+                            </td>
+                        </tr>
+                    </table>
+                </center>
+            </form>
+    </div>
 </div>
 </body>
 </html>

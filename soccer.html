@@ -1,0 +1,138 @@
+<!--
+<?php
+require_once('db_config.php');
+
+$sql = "SELECT * FROM community_lst";
+$result = mysqli_query($conn, $sql);
+$list = '';
+while ($row = mysqli_fetch_array($result)){
+    $escaped_title = htmlspecialchars($row['title']);
+    $list = $list."<li><a href = \"index.php?id={$row['community_id']}\">{$escaped_title}</a></li>";
+}
+
+if (isset($_GET['community_id'])) {
+    $filetered_id = mysqli_real_escape_string($conn, $_GET['community_id']);
+}
+?>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인페이지</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</head>
+<style>
+    #pills-tab>li>button{
+    color: black;
+    }
+    #pills-tab>li>.active{
+        background-color: #212529;
+        color: white;
+    }
+</style>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">    
+        <div class="container-fluid">    
+            <a class="navbar-brand fs-3" href="index.html">스포츠 커뮤니티</a>    
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">        
+                <span class="navbar-toggler-icon"></span>    
+            </button>    
+            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">        
+                <ul class="navbar-nav mb-lg-0">        
+                    <li class="nav-item fs-4">            
+                        <a class="nav-link" href="index.html">Home</a>        
+                    </li>        
+                    <li class="nav-item fs-4">            
+                        <a class="nav-link" href="#">사이트맵</a>        
+                    </li>        
+                    <li class="nav-item fs-4">            
+                        <a class="nav-link" href="#">로그인/회원가입</a>        
+                        <!--<a class="nav-link" href="#">로그아웃</a>-->
+                    </li>
+                </ul>    
+            </div>    
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark mt-0 pt-0">    
+        <div class="container-fluid justify-content-center">  
+            <div class="justify-content-center">        
+                <ul class="navbar-nav mb-2 mb-lg-0">        
+                    <li class="nav-item mt-2 fs-5 px-4">            
+                        <a class="nav-link active" href="soccer.html">축구</a>        
+                    </li>        
+                    <li class="nav-item mt-2 fs-5 px-4">            
+                        <a class="nav-link" href="soccer_abrd.html">해외축구</a>        
+                    </li>        
+                    <li class="nav-item mt-2 fs-5 px-4">            
+                        <a class="nav-link" href="baseball.html">야구</a>        
+                    </li>        
+                    <li class="nav-item mt-2 fs-5 px-4">            
+                        <a class="nav-link" href="baseball_abrd.html">해외야구</a>        
+                    </li>
+                    <li class="nav-item mt-2 fs-5 px-4">            
+                        <a class="nav-link" href="basketball.html">농구</a>        
+                    </li>        
+                    <li class="nav-item mt-2 fs-5 px-4">            
+                        <a class="nav-link" href="esports.html">e스포츠</a>        
+                    </li>                
+                </ul>    
+            </div>    
+        </div>
+    </nav>
+    <div class="nav nav-tabs justify-content-center">
+        <header class="d-flex justify-content-center py-3">
+          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="pills-board-tab" data-bs-toggle="pill" data-bs-target="#pills-board" type="button" role="tab" aria-controls="pills-board" aria-selected="true">게시판</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-team-tab" data-bs-toggle="pill" data-bs-target="#pills-team" type="button" role="tab" aria-controls="pills-team" aria-selected="false">팀 정보</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-player-tab" data-bs-toggle="pill" data-bs-target="#pills-player" type="button" role="tab" aria-controls="pills-player" aria-selected="false">선수 정보</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-schedule-tab" data-bs-toggle="pill" data-bs-target="#pills-schedule" type="button" role="tab" aria-controls="pills-schedule" aria-selected="false">경기 일정</button>
+              </li>
+          </ul>
+          
+        </header>
+      </div>
+      
+    <main class="container-fluid mx-0 h-auto">
+        <div class="p-5 rounded border border-2 border-dark">
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-board" role="tabpanel" aria-labelledby="pills-home-tab">
+                    축구 게시글 Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate deserunt nam id tenetur natus laborum. Aspernatur soluta exercitationem fugit quibusdam iure aut iste. Reiciendis voluptas facere natus, obcaecati sequi delectus.
+                </div>
+                <div class="tab-pane fade" id="pills-team" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    축구 팀 정보 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet aut eius magnam perspiciatis eaque. Delectus placeat, reprehenderit deserunt, totam assumenda error praesentium rerum odio debitis quas, vitae ipsa dicta quia?
+                </div>
+                <div class="tab-pane fade" id="pills-player" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    축구 선수 정보 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio atque consectetur odit explicabo sapiente iste officiis maiores consequatur optio, qui eaque harum ab et vel magni dicta eos neque sed?
+                </div>
+                <div class="tab-pane fade" id="pills-schedule" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    축구 경기 일정 Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis dolorum mollitia cupiditate doloribus aliquid eos consequatur architecto suscipit non magni vel doloremque laudantium assumenda soluta, earum repudiandae a et placeat?
+                </div>
+            </div>
+        </div>
+        
+    </main>
+    
+    <!--<div id="contents" class="container-fluid">
+        <ol id="ol">
+            <li><a href="">축구</a></li>
+            <li><a href="">해외축구</a></li>
+            <li><a href="">야구</a></li>
+            <li><a href="">해외야구</a></li>
+            <li><a href="">농구</a></li>
+            <li><a href="">e스포츠</a></li>
+            <?=$list?>
+        </ol>
+    </div>-->
+</body>
+</html>
